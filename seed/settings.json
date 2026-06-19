@@ -1,0 +1,8 @@
+{
+  "auto_water_enabled": true,
+  "auto_water_below": 30,
+  "auto_water_seconds": 20,
+  "light_schedule_on": "06:00",
+  "light_schedule_off": "20:00",
+  "temp_alert_above": 35
+}

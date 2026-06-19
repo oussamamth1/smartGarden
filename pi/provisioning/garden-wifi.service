@@ -1,0 +1,15 @@
+[Unit]
+Description=Garden Pi WiFi onboarding (captive portal when offline)
+After=NetworkManager.service
+Wants=NetworkManager.service
+# Run before the main garden service so the Pi is online first.
+Before=garden-pi.service
+
+[Service]
+Type=oneshot
+ExecStart=/home/pi/garden/pi/provisioning/start-wifi-connect.sh
+# Don't fail boot if the portal step has trouble.
+SuccessExitStatus=0 1
+
+[Install]
+WantedBy=multi-user.target

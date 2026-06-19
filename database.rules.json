@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "gardens": {
+      "$gardenId": {
+        // Any signed-in user can read/write this garden (single-tenant setup,
+        // gardenId = "garden1"). For multi-user, tighten to:
+        //   "auth != null && auth.uid === $gardenId"
+        // and set kGardenId / GARDEN_ID to the user's uid.
+        ".read": "auth != null",
+        ".write": "auth != null",
+
+        // Telemetry + state are written ONLY by the Pi (firebase-admin bypasses
+        // these rules); clients read but never write them.
+        "telemetry": { ".write": false },
+        "state": { ".write": false }
+      }
+    }
+  }
+}

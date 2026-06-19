@@ -1,0 +1,12 @@
+# Flutter
+.dart_tool/
+.packages
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+pubspec.lock
+
+# Firebase config (regenerate with flutterfire configure)
+lib/firebase_options.dart
+google-services.json
+GoogleService-Info.plist

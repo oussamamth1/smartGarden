@@ -1,0 +1,21 @@
+# Firebase
+firebase-admin>=6.5.0
+
+# Loads pi/.env automatically so `python main.py` works from any shell
+python-dotenv>=1.0.0
+
+# GPIO / actuators
+gpiozero>=2.0
+RPi.GPIO>=0.7.1 ; platform_machine == "armv7l" or platform_machine == "aarch64"
+
+# Sensors (I2C)
+adafruit-circuitpython-bme280>=2.6.0
+adafruit-circuitpython-ads1x15>=2.2.0
+adafruit-circuitpython-bh1750>=1.0.0
+adafruit-blinka>=8.0.0
+
+# Live camera (WebRTC)
+aiortc>=1.6.0
+picamera2 ; platform_machine == "aarch64"
+av>=11.0.0
+numpy>=1.24.0        # test-pattern frames + frame array handling

@@ -1,0 +1,11 @@
+rules_version = '2';
+
+// Camera photos: the Pi (admin SDK) uploads; signed-in users read.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /gardens/{gardenId}/photos/{allPaths=**} {
+      allow read: if request.auth != null;
+      allow write: if false; // Pi uploads via the Admin SDK (bypasses rules)
+    }
+  }
+}
